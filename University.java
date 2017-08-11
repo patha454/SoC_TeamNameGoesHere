@@ -9,7 +9,6 @@
 
 import java.util.ArrayList;
 
-
 /**
 *
 * University should be implimented by classes which search 
@@ -25,6 +24,6 @@ public interface University {
   * @param courseQuerry - Subject to find courses for
   * @return ArrayList<Course> the List of courses provided by the university
   */
-  public java.util.ArrayList querryCourses(String courseQuerry);
+  public ArrayList querryCourses(String courseQuerry);
   
 }
