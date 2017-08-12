@@ -5,8 +5,6 @@
 * @version 1
 */
 
-package unify;
-
 public class OtagoParser implements ParserInterface {
 
     public University queryUniversity() {

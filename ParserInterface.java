@@ -1,5 +1,3 @@
-package unify;
-
 /**
 * ParserInterface.java
 * Interface for the University Classes which search individual

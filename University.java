@@ -1,5 +1,3 @@
-package unify;
-
 import java.util.ArrayList;
 
 /** Univserity.java
