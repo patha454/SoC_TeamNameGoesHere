@@ -1,3 +1,5 @@
+package unify;
+
 /**
 * ParserInterface.java
 * Interface for the University Classes which search individual
@@ -6,8 +8,6 @@
 * @Date 12/07/17
 * @Version 1
 */
-
-import java.util.ArrayList;
 
 /**
 *

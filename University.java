@@ -1,3 +1,5 @@
+package unify;
+
 import java.util.ArrayList;
 
 /** Univserity.java
@@ -34,6 +36,14 @@ public class University {
     public void setLocation(String location) {
         this.location = location; 
     }
+
+    public void setCost(String cost) {
+        this.costPage = cost;
+    }
+
+    public String getCost() {
+        return costPage;
+    }
     
     /*Accessor*/ 
     public ArrayList<Course> getCourses() {
@@ -43,6 +53,10 @@ public class University {
     /* Mutator */
     public void addCourses(ArrayList<Course> newCourses) {
         this.courses.addAll(newCourses);
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
     }
 
 
