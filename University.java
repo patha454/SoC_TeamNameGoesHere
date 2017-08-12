@@ -14,7 +14,10 @@ public class University {
 
     /** University Location 
      Type may change as design is developed*/
-    private String location;
+    private String location; 
+
+    /** URL for cost information */
+    private String costPage;
 
     public String getName() {
         return name;
@@ -46,7 +49,6 @@ public class University {
     /* C.tor */
     public University() {
         courses = new ArrayList<Course>();
-
     }
 
 
