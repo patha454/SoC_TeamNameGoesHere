@@ -7,8 +7,6 @@
 * @Version 1
 */
 
-import java.util.ArrayList;
-
 /**
 *
 * University should be implimented by classes which search 
