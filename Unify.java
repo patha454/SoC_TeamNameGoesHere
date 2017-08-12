@@ -35,7 +35,7 @@ public class Unify {
                 os.write(response.getBytes());
                 os.close();
             } catch (Exception e) {
-                System.err.println("Error processing result");
+                System.err.println("Error processing result: " + e.getMessage());
             }
         }
     }
