@@ -13,6 +13,9 @@
 * University websites, databases, or APIs, to provide uniform data
 * There should be one implimentation per university 
 */
+
+import java.util.ArrayList;
+
 public interface Parser {
   
   /** querryCourses returns an ArrayList of course objects 
@@ -22,6 +25,6 @@ public interface Parser {
   * @param courseQuerry - Subject to find courses for
   * @return ArrayList<Course> the List of courses provided by the university
   */
-  public String queryUniversity(String query);
+  public ArrayList<String> queryUniversity(String query);
   
 }

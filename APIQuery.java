@@ -10,8 +10,12 @@ public class APIQuery {
         System.out.println(getJSON("accounting"));
     }
     public static String getJSON(String query) {
+        ArrayList<String> results = new ArrayList<String>();
         OtagoParser otago = new OtagoParser();
-        return otago.queryUniversity(query);
+        YooBeeParser yoobee = new YooBeeParser();
+        results.addAll(otago.queryUniversity(query));
+        results.addAll(yoobee.queryUniversity(query));
+        return results.toString();
     }
 
     public static String generateCourseJSON(String qual, String desc) {
