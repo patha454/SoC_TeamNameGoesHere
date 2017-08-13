@@ -21,21 +21,21 @@ function fetchBookmarks(){
 
 function queryBackend(query){
   var httpGet;
-  console.log("query")
 
   function retrieveUnifyJSON(){
     httpGet = new XMLHttpRequest();
 
     httpGet.onreadystatechange = loadJSON;
-    httpGet.open('GET', 'http://127.0.0.1/?search='+query);
+    httpGet.open('GET', 'http://127.0.0.1:8000/?search='+query);
     httpGet.send();
   }
 
   function loadJSON(){
     var queryJSON = JSON.parse(httpGet.responseText);
-    console.log(queryJSON);
     renderResults(queryJSON);
   }
+
+  retrieveUnifyJSON();
 }
 
 function renderResults(results){
