@@ -61,8 +61,8 @@ public class OtagoParser implements Parser {
     public OtagoParser() {
         //Wait, to disarm the Otago API anti-DDoS failheap
         try{
-            long fuse = 50;
-            fuse += Math.random() * 200;
+            long fuse = 150;
+            fuse += Math.random() * 500;
             Thread.sleep( (long) fuse);
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
