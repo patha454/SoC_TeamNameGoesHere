@@ -108,7 +108,8 @@
   
     <script>
       $(function() {
-        queryBackend("science");
+        var query = getParameterByName("search")
+        queryBackend(query);
       });
     </script>
 

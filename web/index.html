@@ -12,7 +12,7 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
 
-  <body onLoad="fetchBookmarks()">
+  <body>
 
     <div class="container">
       <div class="header clearfix">
@@ -24,12 +24,12 @@
 
       <div class="jumbotron">
         <h2>What are you interested in studying?</h2>
-        <form id="myForm">
+        <form id="myForm" action="results.html" method="GET">
           <div class="form-group">
-            <input type="text" class="form-control" id="siteName" placeholder="Degree">
+            <input type="text" class="form-control" name="search" placeholder="Degree">
           </div>
           <h2>Filter by Location.
-		  <div class="form-group">
+		  <div class="form-group" name="location">
             
             <select>
 				<option value="allnz">All of New Zealand</option>
