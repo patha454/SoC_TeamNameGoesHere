@@ -23,10 +23,12 @@ public class YooBeeParser implements Parser {
             while (apidata.hasNextLine()) {
                 String responce = apidata.nextLine();
                 int split = responce.indexOf(",");
+                int length = 3 + (int) Math.random() * 24;
+                int cost = 4000 + (int) Math.random() * 3000;
                 String course = responce.substring(0, split);
                 String description = responce.substring(split + 1);
                 if (course.toLowerCase().contains(query.toLowerCase())) {
-                    matches.add(generateCourseJSON(course, description));
+                    matches.add(generateCourseJSON(course, description, Integer.toString(cost), Integer.toString(length)));
                 }
              }
             return matches;
@@ -36,13 +38,15 @@ public class YooBeeParser implements Parser {
         }
     }
 
-    public static String generateCourseJSON(String qual, String desc) {
+    public static String generateCourseJSON(String qual, String desc, String cost, String length) {
         StringBuilder json = new StringBuilder();
         json.append("{ ");
         json.append("\"qualification\" : \"");
         json.append(qual);
         json.append("\", ");
         json.append("\"institution\" : \"Yoobee Polytech\", ");
+        json.append("\"length\" : \"" + length + "\", ");
+        json.append("\"cost\" : \"" + cost + "\", ");
         json.append("\"url\" : \"\", ");
         json.append("\"description\" : \"");
         json.append(desc);
