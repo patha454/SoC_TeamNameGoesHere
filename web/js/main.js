@@ -30,19 +30,7 @@ function queryBackend(query){
 
 function renderResults(results){
   console.log(results);
-<<<<<<< Updated upstream
-}
 
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-=======
-  
   var uniResults = document.getElementById('results');
 
   uniResults.innerHTML = '';
@@ -59,6 +47,15 @@ function getParameterByName(name, url) {
 								  ' <a class="btn btn-default" target="_blank">Visit</a> ' +
                                   
                                   '</div>';
+  }
 }
->>>>>>> Stashed changes
+
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
