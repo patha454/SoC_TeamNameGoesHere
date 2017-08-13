@@ -22,9 +22,11 @@ public class OtagoParser implements Parser {
             String otago = otagoAPI.substring(17, 22);
             String query_ = this.getSubjects.substring(1, 12);
             String result = otago + query_;
+            int length = Math.random() > 0.5 ? 36 : 42;
             String url = query.replaceAll(" ", "+");
             url = UPPER_URL + url;
             url += LOWER_URL;
+            int cost = length * 1024 * 7 / 12;
             Scanner apidata = new Scanner( new File(result));
             ArrayList<String> matches = new ArrayList<String>();
             while (apidata.hasNextLine()) {
@@ -33,7 +35,7 @@ public class OtagoParser implements Parser {
                 String course = responce.substring(0, split);
                 String description = responce.substring(split + 1);
                 if (course.toLowerCase().contains(query.toLowerCase())) {
-                    matches.add(generateCourseJSON(course, description, url));
+                    matches.add(generateCourseJSON(course, description, url, Integer.toString(length), Integer.toString(cost)));
                 }
              }
             return matches;
@@ -43,7 +45,7 @@ public class OtagoParser implements Parser {
         }
     }
 
-    public static String generateCourseJSON(String qual, String desc, String url) {
+    public static String generateCourseJSON(String qual, String desc, String url, String length, String cost) {
         StringBuilder json = new StringBuilder();
         json.append("{ ");
         json.append("\"qualification\" : \"");
@@ -51,6 +53,8 @@ public class OtagoParser implements Parser {
         json.append("\", ");
         json.append("\"institution\" : \"Otago University\", ");
         json.append("\"url\" : \"" + url + "\", ");
+        json.append("\"length\" : \"" + length + "\", ");
+        json.append("\"cost\" : \"" + cost + "\", ");
         json.append("\"description\" : \"");
         json.append(desc);
         json.append("\" ");
