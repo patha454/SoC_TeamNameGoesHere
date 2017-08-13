@@ -37,7 +37,6 @@
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
-        <
       </div>
     </footer>
 
@@ -50,7 +49,7 @@
   
     <script>
       $(function() {
-        var query = getParameterByName("search")
+        var query = decodeURIComponent(getParameterByName("search"));
         queryBackend(query);
       });
     </script>

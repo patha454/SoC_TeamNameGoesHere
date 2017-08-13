@@ -2,6 +2,20 @@ body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
 
+@font-face {
+    font-family: 'CustomFont'; /*a name to be used later*/
+    src: url('../fonts/Decalotype-Black.ttf'); /*URL to font*/
+}
+
+h4 {
+	font-family: 'CustomFont';
+}
+
+h5 {
+	font-family: 'CustomFont';
+	font-size: 90%;
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -55,4 +69,18 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
+}
+
+.info {
+	display: block;
+}
+
+.info-img {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+.info-length {
+	display: inline-block;
 }
