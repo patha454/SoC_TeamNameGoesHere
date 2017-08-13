@@ -21,10 +21,14 @@ import com.sun.net.httpserver.HttpServer;
 
 public class Unify {
 
-    public static void main(String[] args) throws Exception {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
-        server.createContext("/", new MyHandler());
-        server.start();
+    public static void main(String[] args) {
+        try {
+             HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+             server.createContext("/", new MyHandler());
+              server.start();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     static class MyHandler implements HttpHandler {
