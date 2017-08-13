@@ -43,6 +43,7 @@ public class YooBeeParser implements Parser {
         json.append(qual);
         json.append("\", ");
         json.append("\"institution\" : \"Yoobee Polytech\", ");
+        json.append("\"url\" : \"\", ");
         json.append("\"description\" : \"");
         json.append(desc);
         json.append("\" ");
