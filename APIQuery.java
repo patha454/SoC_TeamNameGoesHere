@@ -18,19 +18,4 @@ public class APIQuery {
         return results.toString();
     }
 
-    public static String generateCourseJSON(String qual, String desc) {
-
-        StringBuilder json = new StringBuilder();
-        json.append("{ ");
-        json.append("\"qualification\" : \"");
-        json.append(qual);
-        json.append("\", ");
-        json.append("\"institution\" : \"Otago University\", ");
-        json.append("\"description\" : \"");
-        json.append(desc);
-        json.append("\" ");
-        json.append("}");
-        return json.toString();
-    }
-
 }
