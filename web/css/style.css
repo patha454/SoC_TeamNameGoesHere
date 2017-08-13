@@ -81,3 +81,15 @@ h4 {
     border-bottom: 0;
   }
 }
+
+.info {
+	display: inline-block;
+}
+
+.info-img {
+	display: block;
+}
+
+.info-length {
+	display: block;
+}
