@@ -24,16 +24,23 @@ function renderResults(results){
 
   uniResults.innerHTML = '';
 
-  for(var i = 0; i < results.length; i++){
+  for(var i = 0; i < 3; i++){
     var qual = results[i].qualification;
     var inst = results[i].institution;
-	var desc = results[i].description;
-
+	var cost = results[i].cost;
+	var len = results[i].length;
+	
     uniResults.innerHTML += '<div class="card">'+
-                                  '<h4>'+qual+'</h4>'+
-								  '<h4>'+inst+'</h4>'+
-								  '<p>'+desc+'</p>'+
-								  ' <a class="btn btn-default" target="_blank">Visit</a> ' +
+                                  '<h4>'+inst+'</h4>'+
+								  '<img src="./assets/33.png" alt="33" style="width:40px;height:40px;">'+
+
+								  '<h4>'+qual+'</h4>'+
+								  '<div><img src="./assets/clock.png" alt="33" style="width:40px;height:40px;">'+
+								  '<h4>'+len+' months</h4></div>'+
+								  '<img src="./assets/dollar-black-circle-icon-28.png" alt="33" style="width:25px;height:25px;">'+
+								  '<h4>$'+cost+'</h4>'+
+								  '<img src="./assets/university-of-otago-kiwizone-header.jpg" alt="33" style="width:200px;height:60px;">'+
+								  '<a class="btn btn-default" target="_blank">Visit</a> ' +
                                   
                                   '</div>';
   }

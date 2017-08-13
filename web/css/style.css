@@ -4,6 +4,10 @@ body {
   padding-bottom: 20px;
 }
 
+h4 {
+ color: purple;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -55,7 +59,7 @@ body {
 .marketing {
   margin: 40px 0;
 }
-.marketing p + h4 {
+.marketing p + h4 {h
   margin-top: 28px;
 }
 
