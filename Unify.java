@@ -7,10 +7,14 @@
 *
 * A JSON array of matching courses is returned.
 */
+
+//Allow Access-Control-Allow-Origin, "*"
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -30,6 +34,11 @@ public class Unify {
                 String query = t.getRequestURI().getQuery();
                 query = query.substring(7);
                 String response = APIQuery.getJSON(query);
+                //t.addResponseHeader("Access-Control-Allow-Origin", "*");
+                Map<String, List<String>> m = t.getResponseHeaders();
+                ArrayList<String> l = new ArrayList<String>();
+                l.add("*");
+                m.put("Access-Control-Allow-Origin", l);
                 t.sendResponseHeaders(200, response.length());
                 OutputStream os = t.getResponseBody();
                 os.write(response.getBytes());
