@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class APIQuery {
 
     public static void main(String[] args) {
-        System.out.println(getJSON("accounting"));
+        System.out.println(getJSON("Design"));
     }
     public static String getJSON(String query) {
         ArrayList<String> results = new ArrayList<String>();

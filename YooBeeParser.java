@@ -14,12 +14,12 @@ import java.util.Locale;
 
 public class YooBeeParser implements Parser {
 
-    public String mockData = "YoobeeMockData.txt";
-
+    private final String mockData = "YoobeeMockData.txt";
+    private static final String YOOBEE_URL = "http://www.yoobee.ac.nz/";
 
 
     public ArrayList<String> queryUniversity(String query) {
-        try {;
+        try {
             Scanner apidata = new Scanner( new File(mockData));
             ArrayList<String> matches = new ArrayList<String>();
             NumberFormat nFormat = NumberFormat.getNumberInstance(Locale.US);
@@ -50,7 +50,7 @@ public class YooBeeParser implements Parser {
         json.append("\"institution\" : \"Yoobee Polytech\", ");
         json.append("\"length\" : \"" + length + "\", ");
         json.append("\"cost\" : \"" + cost + "\", ");
-        json.append("\"url\" : \"\", ");
+        json.append("\"url\" : \"" + YOOBEE_URL + "\", ");
         json.append("\"description\" : \"");
         json.append(desc);
         json.append("\" ");
