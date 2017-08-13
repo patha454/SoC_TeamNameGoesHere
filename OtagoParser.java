@@ -9,6 +9,8 @@ import java.lang.StringBuilder;
 import java.util.Scanner;
 import java.io.*;
 import java.util.ArrayList;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class OtagoParser implements Parser {
 
@@ -25,6 +27,7 @@ public class OtagoParser implements Parser {
             String url = query.replaceAll(" ", "+");
             url = UPPER_URL + url;
             url += LOWER_URL;
+            NumberFormat nFormat = NumberFormat.getNumberInstance(Locale.US);
             Scanner apidata = new Scanner( new File(result));
             ArrayList<String> matches = new ArrayList<String>();
             while (apidata.hasNextLine()) {
@@ -35,7 +38,7 @@ public class OtagoParser implements Parser {
                 String course = responce.substring(0, split);
                 String description = responce.substring(split + 1);
                 if (course.toLowerCase().contains(query.toLowerCase())) {
-                    matches.add(generateCourseJSON(course, description, url, Integer.toString(length), Integer.toString(cost)));
+                    matches.add(generateCourseJSON(course, description, url, Integer.toString(length), nFormat.format(cost)));
                 }
              }
             return matches;

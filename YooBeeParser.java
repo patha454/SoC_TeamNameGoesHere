@@ -9,6 +9,8 @@ import java.lang.StringBuilder;
 import java.util.Scanner;
 import java.io.*;
 import java.util.ArrayList;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class YooBeeParser implements Parser {
 
@@ -20,6 +22,7 @@ public class YooBeeParser implements Parser {
         try {;
             Scanner apidata = new Scanner( new File(mockData));
             ArrayList<String> matches = new ArrayList<String>();
+            NumberFormat nFormat = NumberFormat.getNumberInstance(Locale.US);
             while (apidata.hasNextLine()) {
                 String responce = apidata.nextLine();
                 int split = responce.indexOf(",");
@@ -28,7 +31,7 @@ public class YooBeeParser implements Parser {
                 String course = responce.substring(0, split);
                 String description = responce.substring(split + 1);
                 if (course.toLowerCase().contains(query.toLowerCase())) {
-                    matches.add(generateCourseJSON(course, description, Integer.toString(cost), Integer.toString(length)));
+                    matches.add(generateCourseJSON(course, description, nFormat.format(cost), Integer.toString(length)));
                 }
              }
             return matches;
