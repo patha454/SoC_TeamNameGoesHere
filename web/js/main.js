@@ -19,6 +19,24 @@ function queryBackend(query){
 
 function renderResults(results){
   console.log(results);
+
+  var uniResults = document.getElementById('results');
+
+  uniResults.innerHTML = '';
+
+  for(var i = 0; i < results.length; i++){
+    var qual = results[i].qualification;
+    var inst = results[i].institution;
+	var desc = results[i].description;
+
+    uniResults.innerHTML += '<div class="card">'+
+                                  '<h4>'+qual+'</h4>'+
+								  '<h4>'+inst+'</h4>'+
+								  '<p>'+desc+'</p>'+
+								  ' <a class="btn btn-default" target="_blank">Visit</a> ' +
+                                  
+                                  '</div>';
+  }
 }
 
 function getParameterByName(name, url) {
