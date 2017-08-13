@@ -22,14 +22,14 @@ public class OtagoParser implements Parser {
             String otago = otagoAPI.substring(17, 22);
             String query_ = this.getSubjects.substring(1, 12);
             String result = otago + query_;
-            int length = Math.random() > 0.5 ? 36 : 42;
             String url = query.replaceAll(" ", "+");
             url = UPPER_URL + url;
             url += LOWER_URL;
-            int cost = length * 1024 * 7 / 12;
             Scanner apidata = new Scanner( new File(result));
             ArrayList<String> matches = new ArrayList<String>();
             while (apidata.hasNextLine()) {
+                int length = Math.random() > 0.1 ? 36 : 48;
+                int cost = length * 1024 * 7 / 12;
                 String responce = apidata.nextLine();
                 int split = responce.indexOf(",");
                 String course = responce.substring(0, split);
